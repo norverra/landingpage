@@ -48,28 +48,40 @@
     }
 
     h1 {
-      font-size: 2.2rem;
+      font-size: clamp(1.8rem, 5vw, 2.5rem);
       letter-spacing: 3px;
       font-weight: 300;
       margin-bottom: 20px;
     }
 
     p {
-      font-size: 1rem;
+      font-size: clamp(0.9rem, 2.5vw, 1.2rem);
       color: #ccc;
       margin-bottom: 40px;
     }
 
-    .socials a {
-      margin: 0 15px;
-      color: #f5f5f5;
-      text-decoration: none;
-      font-size: 1.4rem;
-      transition: color 0.3s ease;
+    .socials {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
     }
 
-    .socials a:hover {
-      color: #cccccc;
+    .socials a {
+      display: inline-block;
+      transition: transform 0.3s ease, filter 0.3s ease;
+    }
+
+    /* Hover Animation: weiß aufleuchten + leicht vergrößern */
+    .socials a:hover img {
+      filter: brightness(2); /* heller / weiß */
+      transform: scale(1.2);
+    }
+
+    .socials img {
+      width: 50px;
+      height: 50px;
+      display: block;
+      transition: transform 0.3s ease, filter 0.3s ease;
     }
 
     footer {
@@ -79,23 +91,23 @@
       color: #888;
       letter-spacing: 1px;
     }
-
-    /* Social Icons (Unicode fallback) */
-    .socials a::before {
-      display: inline-block;
-      margin-right: 6px;
-      font-family: "Arial";
-    }
   </style>
 </head>
 <body>
   <div class="content">
     <img src="logo.png" alt="NORVERRA Logo" class="logo" />
     <h1>COMING SOON</h1>
-    <p>technical outerwear - performance in excellence.</p>
+    <p>High-performance mountain and outdoor apparel by NORVERRA.</p>
     <div class="socials">
-      <a href="https://instagram.com/norverraofficial" target="_blank">Instagram</a>
-      <a href="https://tiktok.com/@norverra.com" target="_blank">TikTok</a>
+      <!-- Instagram PNG -->
+      <a href="https://instagram.com/norverraofficial" target="_blank" aria-label="NORVERRA auf Instagram">
+        <img src="instagram.png" alt="Instagram Logo" />
+      </a>
+
+      <!-- TikTok PNG -->
+      <a href="https://tiktok.com/@norverra.com" target="_blank" aria-label="NORVERRA auf TikTok">
+        <img src="tiktok.png" alt="TikTok Logo" />
+      </a>
     </div>
   </div>
 
